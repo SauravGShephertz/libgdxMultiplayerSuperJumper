@@ -235,14 +235,12 @@ public class World {
 
 	private void checkCastleCollisions () {
 		if (castle.bounds.overlaps(local_bob.bounds)) {
-			state = WORLD_STATE_NEXT_LEVEL;
 			WarpController.getInstance().updateResult(WarpController.GAME_WIN, null);
 		}
 	}
 
 	private void checkGameOver () {
 		if (heightSoFar - 7.5f > local_bob.position.y) {
-			state = WORLD_STATE_GAME_OVER;
 			WarpController.getInstance().updateResult(WarpController.GAME_LOOSE, null);
 		}
 	}

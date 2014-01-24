@@ -146,7 +146,7 @@ public class StartMultiplayerScreen implements Screen, WarpListener {
 	}
 
 	@Override
-	public void onGameFinished (int code) {
+	public void onGameFinished (int code, boolean isRemote) {
 		if(code==WarpController.GAME_WIN){
 			this.msg = game_loose;
 		}else if(code==WarpController.GAME_LOOSE){

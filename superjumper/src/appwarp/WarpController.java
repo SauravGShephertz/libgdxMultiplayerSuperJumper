@@ -194,14 +194,16 @@ public class WarpController {
 	public void onResultUpdateReceived(String userName, int code){
 		if(localUser.equals(userName)==false){
 			STATE = FINISHED;
-			warpListener.onGameFinished(code);
+			warpListener.onGameFinished(code, true);
+		}else{
+			warpListener.onGameFinished(code, false);
 		}
 	}
 	
 	public void onUserLeftRoom(String roomId, String userName){
 		log("onUserLeftRoom "+userName+" in room "+roomId);
 		if(STATE==STARTED && !localUser.equals(userName)){// Game Started and other user left the room
-			warpListener.onGameFinished(ENEMY_LEFT);
+			warpListener.onGameFinished(ENEMY_LEFT, true);
 		}
 	}
 	

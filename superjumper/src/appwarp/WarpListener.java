@@ -8,7 +8,7 @@ public interface WarpListener {
 	
 	public void onGameStarted(String message);
 	
-	public void onGameFinished(int code);
+	public void onGameFinished(int code, boolean isRemote);
 	
 	public void onGameUpdateReceived(String message);
 	

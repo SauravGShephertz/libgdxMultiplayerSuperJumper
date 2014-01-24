@@ -51,7 +51,7 @@ public class RoomListener implements RoomRequestListener{
 	}
 
 	@Override
-	public void onLockPropertiesDone (byte arg0) {
+	public void onLockPropertiesDone (byte result) {
 		
 	}
 

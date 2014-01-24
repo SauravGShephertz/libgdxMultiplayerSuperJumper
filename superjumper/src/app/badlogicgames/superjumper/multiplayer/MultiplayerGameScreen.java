@@ -317,8 +317,16 @@ public class MultiplayerGameScreen implements Screen, WarpListener {
 	}
 
 	@Override
-	public void onGameFinished (int code) {
-		prevScreen.onGameFinished(code);
+	public void onGameFinished (int code, boolean isRemote) {
+		if(isRemote){
+			prevScreen.onGameFinished(code, true);
+		}else{
+			if(code==WarpController.GAME_WIN){
+				world.state = World.WORLD_STATE_NEXT_LEVEL;
+			}else if(code==WarpController.GAME_LOOSE){
+				world.state = World.WORLD_STATE_GAME_OVER;
+			}
+		}
 	}
 
 	@Override
