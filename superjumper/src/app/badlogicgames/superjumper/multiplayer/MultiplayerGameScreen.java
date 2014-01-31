@@ -327,6 +327,7 @@ public class MultiplayerGameScreen implements Screen, WarpListener {
 				world.state = World.WORLD_STATE_GAME_OVER;
 			}
 		}
+		WarpController.getInstance().handleLeave();
 	}
 
 	@Override

@@ -142,7 +142,13 @@ public class StartMultiplayerScreen implements Screen, WarpListener {
 
 	@Override
 	public void onGameStarted (String message) {
-		game.setScreen(new MultiplayerGameScreen(game, this));
+		Gdx.app.postRunnable(new Runnable() {
+			@Override
+			public void run () {
+				game.setScreen(new MultiplayerGameScreen(game, StartMultiplayerScreen.this));
+			}
+		});
+		
 	}
 
 	@Override
